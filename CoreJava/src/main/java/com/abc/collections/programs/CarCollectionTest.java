@@ -5,6 +5,13 @@ import java.util.List;
 
 import com.abc.dataobjects.Car;
 
+
+// Purpose. 
+// 1. Learning how to pass the list(objects info) from one function to another function.  
+// 2. Breaking big task into small tasks and Create a method for each task.
+
+// Add necessary logic under below comments to perform the tasks.
+
 public class CarCollectionTest {
 
 	public static void main(String[] args) {
@@ -12,6 +19,30 @@ public class CarCollectionTest {
 		
 		List<Car> cars = createCarObjects();
 		displayCarsInfo(cars);
+		
+		List<Car> carsDuplicateList = createDuplicateList(cars);
+		//Display duplicate list
+		
+		
+		List<Car> telanganaCars = getTelanganaCars(cars);
+		
+		// Display telanagana cars info
+		
+		// sort cars by price;
+		sortCarsByPrice(cars);
+		
+		
+		// Display cars after sorting
+		
+		
+		//sort cars by model
+		
+		
+		//Display cars after sorting by model
+		
+		
+		// get the most expensive car and print it.
+		
 	}
 
 	
@@ -52,13 +83,11 @@ public class CarCollectionTest {
 	}
 	
 	
-	
-	private static void removeTNCarNumber(List<Car> cars) {
+	// Create a new list with numbers starts with TN.
+	private static List<Car> getTelanganaCars(List<Car> cars) {
 		
-		// Remove the cars if number starts with "TN". Don't modify the original list.
 		
-		// print the list
-		
+		return null;
 	}
 	
 	
@@ -78,27 +107,13 @@ public class CarCollectionTest {
 	}
 	
 	
-	private static void printTheMostExpensiveCar(List<Car> cars) {
+	private static Car getTheMostExpensiveCar(List<Car> cars) {
 		// Identify the most expensive car
 		
-		// print car object
+	    return null;
 	}
 	
 	
-	private static void printOnlyAPStateCarObjects(List<Car> cars) {
-		
-	}
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-
 }
 
 
