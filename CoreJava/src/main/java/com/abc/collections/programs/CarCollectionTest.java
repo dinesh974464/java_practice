@@ -18,7 +18,7 @@ public class CarCollectionTest {
 		// create 2 car objects, add them to arraylist
 		
 		List<Car> cars = createCarObjects();
-		printCarsInfo(cars);
+		displayCarsInfo(cars);
 		
 		List<Car> carsDuplicateList = createDuplicateList(cars);
 		//Display duplicate list
@@ -47,7 +47,7 @@ public class CarCollectionTest {
 
 	
 	
-	private static void printCarsInfo(List<Car> cars) {
+	private static void displayCarsInfo(List<Car> cars) {
 		for(Car car : cars) {
 			System.out.println("name : "+ car.getNumber() + "   Cost:"+ car.getCost());
 		}
