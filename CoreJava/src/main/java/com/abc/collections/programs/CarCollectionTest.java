@@ -25,7 +25,7 @@ public class CarCollectionTest {
 		List<Car> carsDuplicateList = createDuplicateList(cars);
 		//Display duplicate list
 		for(Car l:carsDuplicateList) {
-			System.out.println("cars info is :  "+ "name : "+ l.getNumber() + "   Cost:"+ l.getCost());
+			System.out.println(" :  "+ "namethe duplicate list car name : "+ l.getNumber() + "   car_Cost:"+ l.getCost());
 		}
 		
 		List<Car> telanganaCars = getTelanganaCars(cars);
@@ -49,8 +49,8 @@ public class CarCollectionTest {
 		
 		
 		// get the most expensive car and print it.
-		getTheMostExpensiveCar(cars);
-		
+		Car g=getTheMostExpensiveCar(cars);
+		System.out.println("the most expensive car  "+g.getNumber()+"  the cost of the car   "+g.getCost()+"  the number  "+g.getModel());
 	}
 
 	
@@ -87,8 +87,8 @@ public class CarCollectionTest {
 	
 	// creates a duplicate collection
 	private static List<Car> createDuplicateList(List<Car> cars) {
-		
-		return cars;
+		List<Car> x=cars;
+		return x;
 	}
 	
 	
@@ -144,8 +144,8 @@ public class CarCollectionTest {
 		sort_cost(cars);
 		int l=cars.size();
 		Car t=cars.get(l-1);
-		System.out.println("the name of the car  "+t.getNumber()+"the cost of the car   "+t.getCost()+"the number  "+t.getModel());
-	    return null;
+		
+	    return t;
 	}
 	
 	
