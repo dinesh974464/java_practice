@@ -1,6 +1,8 @@
 package com.abc.collections.programs;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.abc.dataobjects.Car;
@@ -22,11 +24,16 @@ public class CarCollectionTest {
 		
 		List<Car> carsDuplicateList = createDuplicateList(cars);
 		//Display duplicate list
-		
+		for(Car l:carsDuplicateList) {
+			System.out.println("cars info is :  "+ "name : "+ l.getNumber() + "   Cost:"+ l.getCost());
+		}
 		
 		List<Car> telanganaCars = getTelanganaCars(cars);
 		
 		// Display telanagana cars info
+		for(Car l:telanganaCars) {
+			System.out.println("Telangana car are :  "+ "name : "+ l.getNumber() + "   Cost:"+ l.getCost());
+		}
 		
 		// sort cars by price;
 		sortCarsByPrice(cars);
@@ -36,12 +43,13 @@ public class CarCollectionTest {
 		
 		
 		//sort cars by model
-		
+		sortCarsByModel(cars);
 		
 		//Display cars after sorting by model
 		
 		
 		// get the most expensive car and print it.
+		getTheMostExpensiveCar(cars);
 		
 	}
 
@@ -51,6 +59,7 @@ public class CarCollectionTest {
 		for(Car car : cars) {
 			System.out.println("name : "+ car.getNumber() + "   Cost:"+ car.getCost());
 		}
+		
 	}
 
 	private static List<Car> createCarObjects() {
@@ -79,28 +88,51 @@ public class CarCollectionTest {
 	// creates a duplicate collection
 	private static List<Car> createDuplicateList(List<Car> cars) {
 		
-		return null;
+		return cars;
 	}
 	
 	
 	// Create a new list with numbers starts with TN.
 	private static List<Car> getTelanganaCars(List<Car> cars) {
+		List<Car> z=cars;
+		List<Car> tn=new ArrayList<Car>();
+		for(Car t:z) {
+			String x=t.getNumber();
+			String y[]=x.split("-");
+			if(y[0].equals("TN"))
+				tn.add(t);
+		}
 		
-		
-		return null;
+		return tn;
 	}
 	
 	
 	
 	private static void sortCarsByPrice(List<Car> cars) {
-		// sort the list. 
 		
+		sort_cost(cars);
 		// print the list
+		for(Car v:cars)
+			System.out.println("the sorted list is  "+"name "+v.getNumber()+"cost "+v.getCost());
+		
+	}
+
+
+
+	private static void sort_cost(List<Car> cars) {
+		Collections.sort(cars,new Comparator<Car>()
+				{
+			// ascending sort.
+				   public int compare(Car s1,Car s2) {
+					   return Integer.valueOf(s1.getCost()).compareTo(s2.getCost());
+				   }
+				});
 	}
 	
 	
 	private static void sortCarsByModel(List<Car> cars) {
 		// sort the list. Order - Toyota followed by honda objects.
+		
 		
 		// print the list
 		
@@ -108,8 +140,11 @@ public class CarCollectionTest {
 	
 	
 	private static Car getTheMostExpensiveCar(List<Car> cars) {
-		// Identify the most expensive car
 		
+		sort_cost(cars);
+		int l=cars.size();
+		Car t=cars.get(l-1);
+		System.out.println("the name of the car  "+t.getNumber()+"the cost of the car   "+t.getCost()+"the number  "+t.getModel());
 	    return null;
 	}
 	
