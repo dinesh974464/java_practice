@@ -36,11 +36,11 @@ public class CarCollectionTest {
 		}
 		
 		// sort cars by price;
-		sortCarsByPrice(cars);
-		
+		List<Car> sorted_cars= sortCarsByPrice(cars);
 		
 		// Display cars after sorting
-		
+		for(Car v:cars)
+			System.out.println("the sorted list is  "+"name "+v.getNumber()+"cost "+v.getCost());
 		
 		//sort cars by model
 		sortCarsByModel(cars);
@@ -108,12 +108,12 @@ public class CarCollectionTest {
 	
 	
 	
-	private static void sortCarsByPrice(List<Car> cars) {
+	private static List<Car> sortCarsByPrice(List<Car> cars) {
 		
 		sort_cost(cars);
-		// print the list
-		for(Car v:cars)
-			System.out.println("the sorted list is  "+"name "+v.getNumber()+"cost "+v.getCost());
+		
+		
+		return cars;
 		
 	}
 
