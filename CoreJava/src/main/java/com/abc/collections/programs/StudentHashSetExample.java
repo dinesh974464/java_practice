@@ -4,11 +4,12 @@ import java.util.HashSet;
 
 import com.abc.dataobjects.Student;
 
-// Hashset does not allow duplicate objects.  Objects equality(or Duplication) is checked using equals() method.
+// Hashset does not allow duplicate objects.  
 // Data is stored in buckets. Each bucket can have multiple objects.
-// Hashcode value is used to identify the bucket.
-// when object is added to hashset, bucket is found first with the hashcode value. If bucket is not empty then equality is checked.
-// Two equal objects always have same hashcode value. Because hashcode is calcuated based on the content.
+// Hashcode value is used to identify the bucket
+// Objects equality(or Duplication) is checked using equals() method.
+// Two equal objects always have same hashcode value because hashcode is calcuated based on the content.
+// when object is being added to hashset, it first calls the hashCode() to identify the bucket and then calls equals() to check the equality/dulication in the bucket.
 public class StudentHashSetExample {
 
 	public static void main(String[] args) {
